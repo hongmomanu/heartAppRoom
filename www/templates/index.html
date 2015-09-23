@@ -1,0 +1,31 @@
+
+<ion-header-bar align-title="center" class="bar bar-positive">
+  <h1 class="title myTitle">{{configdata.roomname}}</h1>
+  <button class="button button-icon icon ion-android-menu"
+          ng-click="configmodal.show()"
+          side="right" >
+  </button>
+</ion-header-bar>
+<ion-content>
+  <div class="row">
+    <div class="col  mygrid col-33">
+      <button class="button myButton">候诊病人</button>
+      <div>
+        <ion-list class="myList">
+          <ion-item ng-repeat="item in data"  item="item" class=" item ng-binding ng-animate {{item.status==1?'flash1':'listitem'}} ng-enter ng-enter-active" ng-class="{{item.status==1?'\'flash1\'':'\'listitem\''}}">
+            {{item.lineno.length==1?"&nbsp;&nbsp;":""}}{{item.lineno}} {{item.name}} {{item.name.length==2?"&nbsp;&nbsp;":""}}
+          </ion-item>
+        </ion-list>
+
+      </div>
+
+    </div>
+    <div class="col  mygrid">
+      <button class="button myButton">温馨提示</button>
+      <div id="marquee" class="ng-binding" style="line-height: 33px;"></div>
+
+    </div>
+
+  </div>
+
+</ion-content>
