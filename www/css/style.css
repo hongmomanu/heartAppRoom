@@ -59,13 +59,13 @@
 .listitem {
   background-color :lightskyblue;
   /*font-size: xx-large;*/
-  font-size: 60px;
+  font-size: 80px;
   text-decoration:blink;
 }
 .flashitem {
   background-color :red;
   /*font-size: xx-large;*/
-  font-size: 60px;
+  font-size: 80px;
   text-decoration:blink;
 }
 
@@ -87,7 +87,7 @@
   width: 200px;*/
   background-color :lightskyblue;
   /*font-size: xx-large;*/
-  font-size: 60px;
+  font-size: 80px;
 
   color: #0000ff;
   -webkit-animation:flash1 3s infinite  ease-in-out ;

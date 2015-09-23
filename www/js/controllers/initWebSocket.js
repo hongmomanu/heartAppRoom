@@ -26,12 +26,11 @@ angular.module('app.controllers')
             var removeListItem=function(lineno){
                 for(var i=0;i<$scope.data.length;i++){
                     if($scope.data[i].lineno==lineno){
-                      $scope.data.splice(i,1);
-                        /*$scope.data[i].status="0";
+                        $scope.data[i].status="0";
                         $timeout(function(){
                             $scope.data.splice(i,1);
                         },0);
-*/
+
                         break;
                     }
                 }
@@ -92,12 +91,11 @@ angular.module('app.controllers')
 
                               if(res.status=='1'){
                                   removeListItem(res.lineno);
-                                $scope.data.splice(0, 0, item);
-                                  /*(function(item){
+                                  (function(item){
                                       $timeout(function(){
                                           $scope.data.splice(0, 0, item);
                                       },30);
-                                  })(res);*/
+                                  })(res);
 
                                   //$scope.data[0]=res.data[i];
                               }else if(res.status=='2'||res.status=='3'){
@@ -129,7 +127,14 @@ angular.module('app.controllers')
                             window.location.href="";
                         }else if (res.type=='clearscreen'){
                             clearscreen();
-                        }else if(res.type=='servertime'){
+                        }else if(res.type=='fireprop'){
+                          localStorage[res.name]=res.value;
+                          if(res.name=='tip'){
+                            $scope.maketip();
+                          }
+
+                        }
+                        else if(res.type=='servertime'){
                             //$scope.servertime=res.time;
                             /*console.log(res);
                             $rootScope.$broadcast('fireservertime', $scope,res);*/
