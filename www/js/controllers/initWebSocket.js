@@ -77,7 +77,8 @@ angular.module('app.controllers')
                     return ;
                 }
 
-                url=url.replace(/(:\d+)/g,":3001");
+                //url=url.replace(/(:\d+)/g,":3001");
+                url=url.replace(/(:\d+)/g,":"+(eval(url.match(/(:\d+)/g)[0].slice(1))+1));
                 url=url.replace("http","ws");
 
 
@@ -94,7 +95,7 @@ angular.module('app.controllers')
                                   (function(item){
                                       $timeout(function(){
                                           $scope.data.splice(0, 0, item);
-                                      },30);
+                                      },0);
                                   })(res);
 
                                   //$scope.data[0]=res.data[i];
